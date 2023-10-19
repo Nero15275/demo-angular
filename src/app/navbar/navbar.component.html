@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLinkActive="active" routerLink="">E-cart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="aboutus">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="contactus">Contact us</a>
+        </li>
+        <div *ngIf="isLogIn ? true : false">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="">Logout ( {{userData.username}} )</a>
+          </li>
+        </div>
+        <ng-container *ngIf="isLogIn ? false : true">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="signin">Sign in</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="signup">Sign up</a>
+          </li>
+        </ng-container>
+
+        <!-- 
+        <div class="nav-item">{userData?
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="">Logout</a>
+          </li>
+
+          :<div class="nav-item">
+
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="signin">Sign in</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="signup">Sign up</a>
+            </li>
+          </div>
+          }
+        </div> -->
+
+
+
+
+        <li class="nav-item">
+          <form class="d-flex" style="margin-left: 18rem;">
+            <input class="form-control me-2" style="width: 30rem;" type="search" placeholder="Search"
+              aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </li>
+      </ul>
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="cart">Cart</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

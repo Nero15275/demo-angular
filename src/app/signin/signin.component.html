@@ -1,0 +1,59 @@
+
+<div class="content" style="height: 100vh;width: 100vw;">
+    <div class="card-container bg-light shadow" style="border-radius: 15px;width: 25rem;" >
+      
+      <form [formGroup]="login" (ngSubmit)="loginSubmit()" style="padding: 2rem;">
+        <div class="from-title" style='display: flex;align-items: center;'>
+          <h4 style="padding-left: 7rem;">Sign in</h4>
+        </div>
+        <div class="mb-5">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName='email'style="width: 20rem">
+            <div style="margin-top: 5px;" *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="email.errors?.['required']">
+    email is required.
+  </div>
+
+  
+</div>
+        </div>
+        <div class="mb-5">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName='password'>
+        
+          <div style="margin-top: 5px;" *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="password.errors?.['required']">
+    password is required.
+  </div>
+  <div *ngIf="password.errors?.['minlength']">
+    password must be at least 8 characters long.
+  </div>
+  
+</div>
+         
+         
+        
+          
+          
+          <!-- <div *ngIf="password && password.invalid" >
+            <span style="color: red;" *ngIf=" ['password.errors.minLength'];else elseSpan"> password length Should be 8</span>
+            <ng-template #elseSpan></ng-template>
+
+          </div> -->
+        </div>
+        
+        <div  style="width: 300px;display: flex;justify-content: center;">
+        <div class="signup row" style="margin-left: 5px;margin-top: 1rem;">
+          <button type="submit" style="width: 320px;" class="btn btn-primary"[disabled]="login.invalid" >Submit</button>
+          <p style="padding-Top:25px;">New user </p>
+          <a routerLink="/signup" style="padding-Top:10px;">Signup here</a>
+        </div>
+        </div>
+        </form>
+    </div>
+  </div>

@@ -1,0 +1,18 @@
+.sroot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+      }
+      .hedi{
+          align-items: center;
+          padding-left: 11rem;
+    
+        
+        }
+        .root{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+        }
